@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi amor 💜</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+
+    background:
+    radial-gradient(circle at 20% 30%, #8b22ad, transparent 35%),
+    radial-gradient(circle at 80% 70%, #501080, transparent 40%),
+    linear-gradient(135deg, #080018, #21002f, #050014);
+}
+
+.estrella {
+    position: fixed;
+    background: white;
+    border-radius: 50%;
+    animation: brillar 2s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes brillar {
+    from { opacity: 0.2; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1.5); }
+}
+
+.contenedor {
+    position: relative;
+    z-index: 1;
+    padding: 35px 15px;
+}
+
+h1 {
+    color: #ff8af2;
+    font-size: 35px;
+    text-shadow: 0 0 15px #e000ff;
+}
+
+h2 {
+    color: #e9a4ff;
+}
+
+.personaje {
+    width: 280px;
+    max-width: 85%;
+    filter: drop-shadow(0 0 20px #bd35ff);
+    margin: 15px auto;
+    animation: flotar 3s infinite ease-in-out;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+button {
+    background: linear-gradient(90deg, #9b20d6, #ed53cf);
+    border: 1px solid #f6baff;
+    border-radius: 30px;
+    color: white;
+    padding: 14px 25px;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #c32aff;
+    margin-top: 15px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.carta {
+    display: none;
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid #d78aff;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #9b20d6;
+}
+
+.carta p {
+    white-space: pre-line;
+}
+
+footer {
+    margin-top: 35px;
+    color: #dca5ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h1>✨ Un universo para ti ✨</h1>
+
+    <h2>Bienvenido a mi galaxia 💜</h2>
+
+    <!-- Imagen de Janemba -->
+    <img
+      class="personaje"
+      src="janemba.png"
+      alt="Janemba de Dragon Ball"
+    >
+
+    <p>
+        Hay algo especial que quiero mostrarte...
+    </p>
+
+    <button onclick="abrirCarta()">
+        Presiona aquí 💗
+    </button>
+
+    <div class="carta" id="carta">
+        <h2>Para ti, mi amor ❤️</h2>
+
+        <p>
+te amo mucho amorcitoo
+
+tal no tengamos muchos de novios pero te quiero seguir conociendo, estar contigo en las buenas y malas
+
+se que aveces no te cuento muchas cosas o hablo poco pero aveces me cuesta expresarme, pero mis momentos favoritos son escucharte hablar, me gusta estar contigo tengas o no tengas dinero, estes sucio o limpio te amo de todas las formas 💗
+        </p>
+
+        <h2>Te quiero muchísimo 💜</h2>
+    </div>
+
+    <footer>
+        Hecho especialmente para ti ✨
+    </footer>
+
+</div>
+
+<script>
+
+// Crear estrellas
+for (let i = 0; i < 100; i++) {
+    let estrella = document.createElement("div");
+    estrella.className = "estrella";
+
+    estrella.style.left = Math.random() * 100 + "vw";
+    estrella.style.top = Math.random() * 100 + "vh";
+
+    let tamaño = Math.random() * 3 + 1;
+    estrella.style.width = tamaño + "px";
+    estrella.style.height = tamaño + "px";
+
+    estrella.style.animationDelay = Math.random() * 3 + "s";
+
+    document.body.appendChild(estrella);
+}
+
+// Abrir carta
+function abrirCarta() {
+    document.getElementById("carta").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
